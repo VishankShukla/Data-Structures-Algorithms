@@ -1,17 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
 
 // GDC 
 void gdc(int n,int m){
-    int k=abs(n-m);
-    int greatest;
-    for(int i=1;i<k;k++){
-        if(n%i==0 && m%i==0) greatest=i;
-    }
-    cout<< "GDC =" << greatest;
+int c;
+while(n>0 && m>0){
+    if(n>m) n=n%m;
+    else m=m%n;
+}
+if(n==0) cout<< m;
+else cout<< n;
 }
 int main(){
-    int n;
-    cout <<  "enter the number:";
-    cin >>n;
-    gdc(n);
+    int n1,n2;
+    cout <<  "enter the first number:";
+    cin >>n1;
+    cout <<  "enter the second number:";
+    cin >>n2;
+    gdc(n1,n2);
     return 0;
 }
