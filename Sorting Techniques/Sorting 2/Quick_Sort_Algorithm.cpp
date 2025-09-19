@@ -6,10 +6,10 @@ int Parition(vector<int> &arr,int low,int high){
     int i = low;
     int j = high;
     while(i<j){
-        while(arr[i]<=arr[pivot] && i<=high){
+        while(arr[i]<=pivot && i<high){
             i++;
         }
-        while(arr[j]>=arr[pivot] && j>=low){
+        while(arr[j]>=pivot && j>low){
             j--;
         }
         if(i<j) swap(arr[i],arr[j]);
@@ -19,7 +19,7 @@ int Parition(vector<int> &arr,int low,int high){
 }
 
 void QuickSort(vector<int> &arr,int low,int high){
-    if(i<j){
+    if(low<high){
         int pivot = Parition(arr,low,high);
         QuickSort(arr,low,pivot-1);
         QuickSort(arr,pivot+1,high);
