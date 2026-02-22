@@ -22,3 +22,5 @@ int main()
     int Largest = LargestElement(arr,size);
     cout << "Largest Element: " <<Largest;
 }
+
+// tc = o(n)
